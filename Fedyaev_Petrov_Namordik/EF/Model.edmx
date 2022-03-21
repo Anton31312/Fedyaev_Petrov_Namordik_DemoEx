@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Fedyaev_Petrov_Demo_NamordnikModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Fedyaev_Petrov_Demo_NamordnikModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Agent">
           <Key>
             <PropertyRef Name="ID" />
@@ -162,16 +162,17 @@
 предупреждение 6002: В таблице или представлении "Fedyaev_Petrov_Demo_Namordnik.dbo.VM_ProductList" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="VM_ProductList">
           <Key>
-            <PropertyRef Name="Название продукта" />
-            <PropertyRef Name="Тип продукта" />
-            <PropertyRef Name="Артикул" />
-            <PropertyRef Name="Стоимость" />
+            <PropertyRef Name="NameProduct" />
+            <PropertyRef Name="TypeProduct" />
+            <PropertyRef Name="Articul" />
+            <PropertyRef Name="Cost" />
           </Key>
-          <Property Name="Название продукта" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Тип продукта" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Артикул" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Стоимость" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="Материалы" Type="nvarchar" MaxLength="4000" />
+          <Property Name="NameProduct" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TypeProduct" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Articul" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Material" Type="nvarchar" MaxLength="4000" />
+          <Property Name="QtyLastSaleProduct" Type="int" />
         </EntityType>
         <Association Name="FK_Agent_AgentType">
           <End Role="AgentType" Type="Self.AgentType" Multiplicity="1" />
@@ -378,11 +379,12 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VM_ProductList" EntityType="Self.VM_ProductList" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [VM_ProductList].[Название продукта] AS [Название продукта], 
-    [VM_ProductList].[Тип продукта] AS [Тип продукта], 
-    [VM_ProductList].[Артикул] AS [Артикул], 
-    [VM_ProductList].[Стоимость] AS [Стоимость], 
-    [VM_ProductList].[Материалы] AS [Материалы]
+    [VM_ProductList].[NameProduct] AS [NameProduct], 
+    [VM_ProductList].[TypeProduct] AS [TypeProduct], 
+    [VM_ProductList].[Articul] AS [Articul], 
+    [VM_ProductList].[Cost] AS [Cost], 
+    [VM_ProductList].[Material] AS [Material], 
+    [VM_ProductList].[QtyLastSaleProduct] AS [QtyLastSaleProduct]
     FROM [dbo].[VM_ProductList] AS [VM_ProductList]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Agent_AgentType" Association="Self.FK_Agent_AgentType">
@@ -438,8 +440,7 @@
             <End Role="Shop" EntitySet="Shop" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Fedyaev_Petrov_Demo_NamordnikModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -614,16 +615,17 @@
         </EntityType>
         <EntityType Name="VM_ProductList">
           <Key>
-            <PropertyRef Name="Название_продукта" />
-            <PropertyRef Name="Тип_продукта" />
-            <PropertyRef Name="Артикул" />
-            <PropertyRef Name="Стоимость" />
+            <PropertyRef Name="NameProduct" />
+            <PropertyRef Name="TypeProduct" />
+            <PropertyRef Name="Articul" />
+            <PropertyRef Name="Cost" />
           </Key>
-          <Property Name="Название_продукта" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Тип_продукта" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Артикул" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Стоимость" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="Материалы" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="NameProduct" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TypeProduct" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Articul" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Material" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="QtyLastSaleProduct" Type="Int32" />
         </EntityType>
         <Association Name="FK_Agent_AgentType">
           <End Role="AgentType" Type="Self.AgentType" Multiplicity="1" />
@@ -1034,11 +1036,12 @@
           <EntitySetMapping Name="VM_ProductList">
             <EntityTypeMapping TypeName="Fedyaev_Petrov_Demo_NamordnikModel.VM_ProductList">
               <MappingFragment StoreEntitySet="VM_ProductList">
-                <ScalarProperty Name="Название_продукта" ColumnName="Название продукта" />
-                <ScalarProperty Name="Тип_продукта" ColumnName="Тип продукта" />
-                <ScalarProperty Name="Артикул" ColumnName="Артикул" />
-                <ScalarProperty Name="Стоимость" ColumnName="Стоимость" />
-                <ScalarProperty Name="Материалы" ColumnName="Материалы" />
+                <ScalarProperty Name="QtyLastSaleProduct" ColumnName="QtyLastSaleProduct" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Articul" ColumnName="Articul" />
+                <ScalarProperty Name="TypeProduct" ColumnName="TypeProduct" />
+                <ScalarProperty Name="NameProduct" ColumnName="NameProduct" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

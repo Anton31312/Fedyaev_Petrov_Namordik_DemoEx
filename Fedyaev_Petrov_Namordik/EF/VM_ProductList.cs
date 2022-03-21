@@ -14,10 +14,11 @@ namespace Fedyaev_Petrov_Namordik.EF
     
     public partial class VM_ProductList
     {
-        public string Название_продукта { get; set; }
-        public string Тип_продукта { get; set; }
-        public string Артикул { get; set; }
-        public decimal Стоимость { get; set; }
-        public string Материалы { get; set; }
+        public string NameProduct { get; set; }
+        public string TypeProduct { get; set; }
+        public string Articul { get; set; }
+        public decimal Cost { get; set; }
+        public string Material { get; set; }
+        public Nullable<int> QtyLastSaleProduct { get; set; }
     }
 }

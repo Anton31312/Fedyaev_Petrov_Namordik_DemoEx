@@ -7,7 +7,7 @@
         <Style TargetType="Button">
             <Setter Property="Width" Value="200"/>
             <Setter Property="FontFamily" Value="Tw Cen MT"/>
-            <Setter Property="Foreground" Value="#FFFFFFFF"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
             <Setter Property="Background" Value="#FDBD40"/>
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="Height" Value="35"/>
@@ -16,6 +16,7 @@
 
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Tw Cen MT"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
         </Style>
     </Application.Resources>
 </Application>

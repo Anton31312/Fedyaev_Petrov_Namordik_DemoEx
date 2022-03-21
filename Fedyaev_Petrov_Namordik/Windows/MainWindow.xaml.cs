@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Fedyaev_Petrov_Namordik.Windows;
 
 namespace Fedyaev_Petrov_Namordik
 {
@@ -27,7 +28,10 @@ namespace Fedyaev_Petrov_Namordik
 
         private void btnProduct_Click(object sender, RoutedEventArgs e)
         {
+            ProductWindow productWindow = new ProductWindow();
 
+            productWindow.ShowDialog();
+            this.Close();
         }
 
         private void btnMaterial_Click(object sender, RoutedEventArgs e)
