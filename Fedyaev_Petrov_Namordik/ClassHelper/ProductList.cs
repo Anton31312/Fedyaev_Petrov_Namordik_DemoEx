@@ -23,7 +23,7 @@ namespace Fedyaev_Petrov_Namordik.EF
                 }
                 else 
                 {
-                    return "#fffff";
+                    return "#ffffff";
                 }
             }
         }
