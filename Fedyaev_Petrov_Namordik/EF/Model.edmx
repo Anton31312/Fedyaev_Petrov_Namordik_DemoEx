@@ -173,6 +173,7 @@
           <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="Material" Type="nvarchar" MaxLength="4000" />
           <Property Name="QtyLastSaleProduct" Type="int" />
+          <Property Name="Image" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK_Agent_AgentType">
           <End Role="AgentType" Type="Self.AgentType" Multiplicity="1" />
@@ -384,7 +385,8 @@
     [VM_ProductList].[Articul] AS [Articul], 
     [VM_ProductList].[Cost] AS [Cost], 
     [VM_ProductList].[Material] AS [Material], 
-    [VM_ProductList].[QtyLastSaleProduct] AS [QtyLastSaleProduct]
+    [VM_ProductList].[QtyLastSaleProduct] AS [QtyLastSaleProduct], 
+    [VM_ProductList].[Image] AS [Image]
     FROM [dbo].[VM_ProductList] AS [VM_ProductList]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Agent_AgentType" Association="Self.FK_Agent_AgentType">
@@ -626,6 +628,7 @@
           <Property Name="Cost" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="Material" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
           <Property Name="QtyLastSaleProduct" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Agent_AgentType">
           <End Role="AgentType" Type="Self.AgentType" Multiplicity="1" />
@@ -1036,6 +1039,7 @@
           <EntitySetMapping Name="VM_ProductList">
             <EntityTypeMapping TypeName="Fedyaev_Petrov_Demo_NamordnikModel.VM_ProductList">
               <MappingFragment StoreEntitySet="VM_ProductList">
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="QtyLastSaleProduct" ColumnName="QtyLastSaleProduct" />
                 <ScalarProperty Name="Material" ColumnName="Material" />
                 <ScalarProperty Name="Cost" ColumnName="Cost" />

@@ -20,5 +20,6 @@ namespace Fedyaev_Petrov_Namordik.EF
         public decimal Cost { get; set; }
         public string Material { get; set; }
         public Nullable<int> QtyLastSaleProduct { get; set; }
+        public string Image { get; set; }
     }
 }

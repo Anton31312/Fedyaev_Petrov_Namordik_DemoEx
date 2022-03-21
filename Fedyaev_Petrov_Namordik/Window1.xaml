@@ -1,0 +1,62 @@
+﻿<Window x:Class="Fedyaev_Petrov_Namordik.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fedyaev_Petrov_Namordik"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Grid>
+        <Border BorderBrush="Black"
+                            BorderThickness="1"
+                            Width="1000"
+                            Height="100"
+                            Background="{Binding GetColor}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Первый столбец (Изображение) -->
+
+                <Image Grid.Column="0">
+                    <Image.Source>
+                        <Binding Path="Image">
+                            <Binding.TargetNullValue>
+                                <ImageSource>/Source\picture.png</ImageSource>
+                            </Binding.TargetNullValue>
+                        </Binding>
+                    </Image.Source>
+                </Image>
+
+                <!-- Второй столбец (Тип и имя) -->
+                <StackPanel Grid.Column="1">
+                    <TextBlock FontSize="20"
+                                               FontFamily="Tw Cen MT"
+                                               Text="{Binding GetTypeAndName}"
+                                               Margin="0 5"/>
+
+                    <TextBlock FontSize="20"
+                                               FontFamily="Tw Cen MT"
+                                               Text="{Binding GetArticul}"
+                                               Margin="0 5"/>
+
+                    <TextBlock FontSize="20"
+                                               FontFamily="Tw Cen MT"
+                                               Text="Поставщики"
+                                               Margin="0 5"/>
+                </StackPanel>
+
+                <!-- Третий столбец (Стоимость) -->
+                <TextBlock Grid.Column="2" 
+                                           FontSize="20"
+                                           FontFamily="Tw Cen MT"
+                                           Text="{Binding GetCost}"
+                                           Margin="0 5"
+                                           VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

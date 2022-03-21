@@ -68,9 +68,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\ProductList.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ProductWindow.xaml.cs">
       <DependentUpon>ProductWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -204,6 +211,76 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Resource Include="products\5fb128cc69235.jpg" />
+    <Resource Include="products\5fb128cc719a6.jpg" />
+    <Resource Include="products\5fb128cc753e3.jpg" />
+    <Resource Include="products\5fb128cc7941f.jpg" />
+    <Resource Include="products\5fb128cc7d798.jpg" />
+    <Resource Include="products\5fb128cc80a10.jpg" />
+    <Resource Include="products\5fb128cc84474.jpg" />
+    <Resource Include="products\5fb128cc87b90.jpg" />
+    <Resource Include="products\5fb128cc8b750.jpg" />
+    <Resource Include="products\5fb128cc8f4dd.jpg" />
+    <Resource Include="products\5fb128cc9414b.jpg" />
+    <Resource Include="products\5fb128cc97ff4.jpg" />
+    <Resource Include="products\5fb128cc9bd36.jpg" />
+    <Resource Include="products\5fb128cc9f069.jpg" />
+    <Resource Include="products\5fb128cca31d9.jpg" />
+    <Resource Include="products\5fb128cca6910.jpg" />
+    <Resource Include="products\5fb128cca9d9b.jpg" />
+    <Resource Include="products\5fb128ccae21a.jpg" />
+    <Resource Include="products\5fb128ccb1958.jpg" />
+    <Resource Include="products\5fb128ccb4e8c.jpg" />
+    <Resource Include="products\5fb128ccb97a0.jpg" />
+    <Resource Include="products\5fb128ccbd227.jpg" />
+    <Resource Include="products\5fb128ccc1592.jpg" />
+    <Resource Include="products\5fb128ccc4a86.jpg" />
+    <Resource Include="products\5fb128ccc9a9e.jpg" />
+    <Resource Include="products\5fb128cccdbee.jpg" />
+    <Resource Include="products\5fb128ccd133c.jpg" />
+    <Resource Include="products\5fb128ccd5dc2.jpg" />
+    <Resource Include="products\5fb128ccd8ff6.jpg" />
+    <Resource Include="products\5fb128ccdca1e.jpg" />
+    <Resource Include="products\5fb128cce0042.jpg" />
+    <Resource Include="products\5fb128cce39fa.jpg" />
+    <Resource Include="products\5fb128cce7971.jpg" />
+    <Resource Include="products\5fb128cceae7c.jpg" />
+    <Resource Include="products\5fb128ccef256.jpg" />
+    <Resource Include="products\5fb128ccf3dd2.jpg" />
+    <Resource Include="products\5fb128cd0544b.jpg" />
+    <Resource Include="products\5fb128cd08e3f.jpg" />
+    <Resource Include="products\5fb128cd0d0b1.jpg" />
+    <Resource Include="products\5fb128cd10ec2.jpg" />
+    <Resource Include="products\5fb128cd157f9.jpg" />
+    <Resource Include="products\5fb128cd19baa.jpg" />
+    <Resource Include="products\5fb128cd1e2b9.jpg" />
+    <Resource Include="products\5fb128cd2215f.jpg" />
+    <Resource Include="products\5fb128cd268bf.jpg" />
+    <Resource Include="products\5fb128cd2ab69.jpg" />
+    <Resource Include="products\5fb128cd2ef7a.jpg" />
+    <Resource Include="products\5fb128cd331c4.jpg" />
+    <Resource Include="products\5fb128cd3674d.jpg" />
+    <Resource Include="products\5fb128cd3af5c.jpg" />
+    <Resource Include="products\5fb128cd3e7e4.jpg" />
+    <Resource Include="products\5fb128cd41ece.jpg" />
+    <Resource Include="products\5fb128cd4672c.jpg" />
+    <Resource Include="products\5fb128cd4c99d.jpg" />
+    <Resource Include="products\5fb128cd50a70.jpg" />
+    <Resource Include="products\5fb128cd5433e.jpg" />
+    <Resource Include="products\5fb128cd5838d.jpg" />
+    <Resource Include="products\5fb128cd5bb7d.jpg" />
+    <Resource Include="products\5fb128cd5ff78.jpg" />
+    <Resource Include="products\5fb128cd63666.jpg" />
+    <Resource Include="products\5fb128cd66df6.jpg" />
+    <Resource Include="products\5fb128cd6a2b6.jpg" />
+    <Resource Include="products\5fb128cd6e4ee.jpg" />
+    <Resource Include="products\5fb128cd71db3.jpg" />
+    <Resource Include="products\5fb128cd7518c.jpg" />
+    <Resource Include="products\5fb128cd78fce.jpg" />
+    <Resource Include="products\5fb128cd7d2cd.jpg" />
+    <Resource Include="products\5fb128cd80a06.jpg" />
+    <Resource Include="products\5fb128cd8417e.jpg" />
+    <Resource Include="products\5fb128cd8818d.jpg" />
     <Resource Include="Source\picture.png" />
     <Resource Include="Source\Намордник.png" />
   </ItemGroup>

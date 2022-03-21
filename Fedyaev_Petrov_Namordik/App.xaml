@@ -16,7 +16,6 @@
 
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Tw Cen MT"/>
-            <Setter Property="Foreground" Value="#FFFFFF"/>
         </Style>
     </Application.Resources>
 </Application>

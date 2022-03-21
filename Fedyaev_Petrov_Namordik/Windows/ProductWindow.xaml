@@ -32,7 +32,8 @@
         <TextBlock Text="Список продуктов"
                    HorizontalAlignment="Center"
                    FontSize="40" 
-                   VerticalAlignment="Center"/>
+                   VerticalAlignment="Center"
+                   Foreground="#FFFFFF"/>
 
 
         <!-- Фильтры и поиск -->
@@ -44,7 +45,8 @@
             <TextBlock Text="Поиск: "
                        FontSize="25" 
                        FontFamily="Candara"
-                       Margin="10 0"/>
+                       Margin="10 0"
+                       Foreground="#FFFFFF"/>
             <TextBox x:Name="txtSearch"
                      Width="220"
                      Height="30"
@@ -70,14 +72,15 @@
                      Margin="20 0"
                      IsEditable="True"
                      SelectionChanged="cmbFilter_SelectionChanged"/>
+        </WrapPanel>
 
 
-            <!-- Список материалов -->
+        <!-- Список материалов -->
 
-            <ListView x:Name="lvListMaterial"
-                  Grid.Row="3" FontFamily="Candara"
+            <ListView x:Name="lvListProduct"
+                  Grid.Row="2" FontFamily="Tw Cen MT"
                   SelectionMode="Multiple"
-                  SelectionChanged="lvListMaterial_SelectionChanged">
+                  SelectionChanged="lvListProduct_SelectionChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="Black"
@@ -107,32 +110,83 @@
                                 <!-- Второй столбец (Тип и имя) -->
                                 <StackPanel Grid.Column="1">
                                     <TextBlock FontSize="20"
-                               FontFamily="Candara"
-                               Text="{Binding GetTypeAndName}"
-                               Margin="0 5"/>
+                                               FontFamily="Tw Cen MT"
+                                               Text="{Binding GetTypeAndName}"
+                                               Margin="0 5"/>
 
                                     <TextBlock FontSize="20"
-                               FontFamily="Candara"
-                               Text="{Binding GetMinCount}"
-                               Margin="0 5"/>
+                                               FontFamily="Tw Cen MT"
+                                               Text="{Binding GetArticul}"
+                                               Margin="0 5"/>
 
                                     <TextBlock FontSize="20"
-                               FontFamily="Candara"
-                               Text="Поставщики"
-                               Margin="0 5"/>
+                                               FontFamily="Tw Cen MT"
+                                               Text="{Binding Material}"
+                                               Margin="0 5"/>
                                 </StackPanel>
-                                <!-- Третий столбец (Остаток) -->
+                                
+                                <!-- Третий столбец (Стоимость) -->
                                 <TextBlock Grid.Column="2" 
-                           FontSize="20"
-                           FontFamily="Candara"
-                           Text="{Binding GetCount}"
-                           Margin="0 5"
-                           VerticalAlignment="Center"/>
+                                           FontSize="20"
+                                           FontFamily="Tw Cen MT"
+                                           Text="{Binding GetCost}"
+                                           Margin="0 5"
+                                           VerticalAlignment="Center"/>
                             </Grid>
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+        <!-- переход между страницами -->
+        <Border Grid.Row="3"
+                Grid.RowSpan="2"
+                Background="#B0E5FD"/>
+        <WrapPanel Grid.Row="4" 
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Margin="30 0">
+            <Button x:Name="btnBack"
+                    Content="Назад"
+                    FontSize="18"
+                    FontFamily="Candara"
+                    Margin="5 0"
+                    Background="#FDBD40"
+                    BorderThickness="0"
+                    Click="btnBack_Click"/>
+
+            <Button x:Name="btn1"
+                    Content="1"
+                    FontSize="18"
+                    FontFamily="Candara"
+                    Margin="5 0"
+                    Background="#A5E887"
+                    BorderThickness="0"/>
+
+            <Button x:Name="btn2"
+                    Content="2"
+                    FontSize="18"
+                    FontFamily="Candara"
+                    Margin="5 0"
+                    Background="#FDBD40"
+                    BorderThickness="0"/>
+
+            <Button x:Name="btn3"
+                    Content="3"
+                    FontSize="18"
+                    FontFamily="Candara"
+                    Margin="5 0"
+                    Background="#FDBD40"
+                    BorderThickness="0"/>
+
+            <Button x:Name="btnNext"
+                    Content="Вперед"
+                    FontSize="18"
+                    FontFamily="Candara"
+                    Margin="5 0"
+                    Background="#FDBD40"
+                    BorderThickness="0"
+                    Click="btnNext_Click"/>
         </WrapPanel>
     </Grid>
 </Window>

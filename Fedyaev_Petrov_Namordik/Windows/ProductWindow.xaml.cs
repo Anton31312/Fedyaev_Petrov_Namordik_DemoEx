@@ -39,7 +39,17 @@ namespace Fedyaev_Petrov_Namordik.Windows
 
         }
 
-        private void lvListMaterial_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lvListProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
         {
 
         }
