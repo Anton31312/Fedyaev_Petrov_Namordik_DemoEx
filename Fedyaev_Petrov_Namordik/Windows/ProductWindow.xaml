@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fedyaev_Petrov_Namordik.Windows"
         mc:Ignorable="d"
-        Title="ProductWindow" 
+        Title="Намордник" 
         Height="800" 
         Width="1300"
         WindowStartupLocation="CenterScreen"
@@ -27,7 +27,9 @@
         
         <Image Source="/Source\Намордник.png"
                HorizontalAlignment="Left"
-               Margin="15 0"/>
+               Margin="15 0"
+               Grid.RowSpan="2"
+               Height="100"/>
         
         <TextBlock Text="Список продуктов"
                    HorizontalAlignment="Center"
@@ -39,19 +41,18 @@
         <!-- Фильтры и поиск -->
 
         <WrapPanel Grid.Row="1" 
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Center"
-                   Margin="50 0 0 0">
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
             <TextBlock Text="Поиск: "
                        FontSize="25" 
-                       FontFamily="Candara"
+                       FontFamily="Tw Cen MT"
                        Margin="10 0"
                        Foreground="#FFFFFF"/>
             <TextBox x:Name="txtSearch"
                      Width="220"
                      Height="30"
                      FontSize="20"
-                     FontFamily="Candara"
+                     FontFamily="Tw Cen MT"
                      Margin="20 0"
                      TextChanged="txtSearch_TextChanged"/>
 
@@ -59,7 +60,7 @@
                       Width="220"
                       Height="30"
                       FontSize="20"
-                      FontFamily="Candara"
+                      FontFamily="Tw Cen MT"
                       Margin="20 0"
                       IsEditable="True"
                       SelectionChanged="cmbSort_SelectionChanged"/>
@@ -68,7 +69,7 @@
                      Width="220"
                      Height="30"
                      FontSize="20"
-                     FontFamily="Candara"
+                     FontFamily="Tw Cen MT"
                      Margin="20 0"
                      IsEditable="True"
                      SelectionChanged="cmbFilter_SelectionChanged"/>
@@ -85,14 +86,14 @@
                     <DataTemplate>
                         <Border BorderBrush="Black"
                             BorderThickness="1"
-                            Width="1000"
+                            Width="1250"
                             Height="100"
                             Background="{Binding GetColor}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="150"/>
                                     <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="200"/>
                                 </Grid.ColumnDefinitions>
 
                                 <!-- Первый столбец (Изображение) -->
@@ -101,7 +102,7 @@
                                     <Image.Source>
                                         <Binding Path="Image">
                                             <Binding.TargetNullValue>
-                                                <ImageSource>/Source\picture.png</ImageSource>
+                                            <ImageSource>/Source/picture.png</ImageSource>
                                             </Binding.TargetNullValue>
                                         </Binding>
                                     </Image.Source>
@@ -138,51 +139,81 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-        <!-- переход между страницами -->
         <Border Grid.Row="3"
                 Grid.RowSpan="2"
                 Background="#B0E5FD"/>
+
+        <WrapPanel Grid.Row="3" 
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Margin="20 0">
+            <Button x:Name="btnEdit"
+                    FontSize="20"
+                    Content="Изменить"
+                    Width="120"
+                    Height="30"
+                    FontFamily="Tw Cen MT"
+                    Click="btnEdit_Click"/>
+            
+            <Button x:Name="btnAdd"
+                    FontSize="20"
+                    Content="Добавить"
+                    Margin="10 0 0 0"
+                    Width="120"
+                    Height="30"
+                    FontFamily="Tw Cen MT"
+                    Click="btnAdd_Click"/>
+        </WrapPanel>
+        
+
+        <!-- переход между страницами -->
+
         <WrapPanel Grid.Row="4" 
                    HorizontalAlignment="Right"
                    VerticalAlignment="Center"
-                   Margin="30 0">
+                   Margin="10 0">
             <Button x:Name="btnBack"
                     Content="Назад"
                     FontSize="18"
-                    FontFamily="Candara"
+                    FontFamily="Tw Cen MT"
                     Margin="5 0"
                     Background="#FDBD40"
+                    Width="100"
                     BorderThickness="0"
                     Click="btnBack_Click"/>
 
             <Button x:Name="btn1"
                     Content="1"
                     FontSize="18"
-                    FontFamily="Candara"
+                    Width="30"
+                    FontFamily="Tw Cen MT"
                     Margin="5 0"
-                    Background="#A5E887"
+                    Background="Transparent"
                     BorderThickness="0"/>
 
             <Button x:Name="btn2"
                     Content="2"
                     FontSize="18"
-                    FontFamily="Candara"
+                    FontFamily="Tw Cen MT"
                     Margin="5 0"
-                    Background="#FDBD40"
+                    Width="30"
+                    Background="Transparent"
                     BorderThickness="0"/>
 
             <Button x:Name="btn3"
                     Content="3"
                     FontSize="18"
-                    FontFamily="Candara"
+                    Width="30"
+                    FontFamily="Tw Cen MT"
                     Margin="5 0"
-                    Background="#FDBD40"
+                    Background="Transparent"
                     BorderThickness="0"/>
 
             <Button x:Name="btnNext"
                     Content="Вперед"
+                    Width="100"
                     FontSize="18"
-                    FontFamily="Candara"
+                    FontFamily="Tw Cen MT"
                     Margin="5 0"
                     Background="#FDBD40"
                     BorderThickness="0"

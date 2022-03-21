@@ -8,7 +8,7 @@ namespace Fedyaev_Petrov_Namordik.EF
 {
     public partial class VM_ProductList
     {
-        public string GetTypeAndName { get => $"Тип продукта: {TypeProduct} | Наименование продукта: {NameProduct}"; }
+        public string GetTypeAndName { get => $"{TypeProduct} | {NameProduct}"; }
         public string GetArticul { get => $"Артикул: {Articul}"; }
         public string GetMaterial { get => $"Материал: {Material}"; }
         public string GetCost { get => $"Стоимость: {Cost}"; }

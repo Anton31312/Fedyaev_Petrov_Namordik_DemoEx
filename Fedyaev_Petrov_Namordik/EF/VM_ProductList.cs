@@ -21,5 +21,6 @@ namespace Fedyaev_Petrov_Namordik.EF
         public string Material { get; set; }
         public Nullable<int> QtyLastSaleProduct { get; set; }
         public string Image { get; set; }
+        public Nullable<int> NumberWorkshop { get; set; }
     }
 }
