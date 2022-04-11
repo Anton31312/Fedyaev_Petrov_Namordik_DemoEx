@@ -164,13 +164,18 @@
           <Key>
             <PropertyRef Name="NameProduct" />
             <PropertyRef Name="TypeProduct" />
+            <PropertyRef Name="ProductTypeID" />
             <PropertyRef Name="Articul" />
             <PropertyRef Name="Cost" />
           </Key>
           <Property Name="NameProduct" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="TypeProduct" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductTypeID" Type="int" Nullable="false" />
           <Property Name="Articul" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="ProductionPersonCount" Type="int" />
+          <Property Name="ProductionWorkshopNumber" Type="int" />
           <Property Name="Material" Type="nvarchar" MaxLength="4000" />
           <Property Name="QtyLastSaleProduct" Type="int" />
           <Property Name="Image" Type="nvarchar" MaxLength="100" />
@@ -383,8 +388,12 @@
             <DefiningQuery>SELECT 
     [VM_ProductList].[NameProduct] AS [NameProduct], 
     [VM_ProductList].[TypeProduct] AS [TypeProduct], 
+    [VM_ProductList].[ProductTypeID] AS [ProductTypeID], 
     [VM_ProductList].[Articul] AS [Articul], 
     [VM_ProductList].[Cost] AS [Cost], 
+    [VM_ProductList].[Description] AS [Description], 
+    [VM_ProductList].[ProductionPersonCount] AS [ProductionPersonCount], 
+    [VM_ProductList].[ProductionWorkshopNumber] AS [ProductionWorkshopNumber], 
     [VM_ProductList].[Material] AS [Material], 
     [VM_ProductList].[QtyLastSaleProduct] AS [QtyLastSaleProduct], 
     [VM_ProductList].[Image] AS [Image], 
@@ -623,6 +632,7 @@
             <PropertyRef Name="TypeProduct" />
             <PropertyRef Name="Articul" />
             <PropertyRef Name="Cost" />
+            <PropertyRef Name="ProductTypeID" />
           </Key>
           <Property Name="NameProduct" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="TypeProduct" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -632,6 +642,10 @@
           <Property Name="QtyLastSaleProduct" Type="Int32" />
           <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="NumberWorkshop" Type="Int32" />
+          <Property Name="ProductTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductionPersonCount" Type="Int32" />
+          <Property Name="ProductionWorkshopNumber" Type="Int32" />
         </EntityType>
         <Association Name="FK_Agent_AgentType">
           <End Role="AgentType" Type="Self.AgentType" Multiplicity="1" />
@@ -1042,6 +1056,10 @@
           <EntitySetMapping Name="VM_ProductList">
             <EntityTypeMapping TypeName="Fedyaev_Petrov_Demo_NamordnikModel.VM_ProductList">
               <MappingFragment StoreEntitySet="VM_ProductList">
+                <ScalarProperty Name="ProductionWorkshopNumber" ColumnName="ProductionWorkshopNumber" />
+                <ScalarProperty Name="ProductionPersonCount" ColumnName="ProductionPersonCount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
                 <ScalarProperty Name="NumberWorkshop" ColumnName="NumberWorkshop" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="QtyLastSaleProduct" ColumnName="QtyLastSaleProduct" />

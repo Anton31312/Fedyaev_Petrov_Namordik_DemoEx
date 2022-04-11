@@ -90,7 +90,7 @@ namespace Fedyaev_Petrov_Namordik.Windows
             // Фильтрация
             if (cmbFilter.SelectedIndex != 0)
             {
-                product = product.Where(i => i.ProductTypeID == cmbFilter.SelectedIndex).ToList();
+                listProduct = listProduct.Where(i => i.ProductTypeID == cmbFilter.SelectedIndex).ToList();
             }
 
             countProduct = listProduct.Count;
@@ -136,7 +136,7 @@ namespace Fedyaev_Petrov_Namordik.Windows
 
             typeProduct.Insert(0, new ProductType { Title = "Все типы" }); // добавление в список элемента "Все типы"
             cmbFilter.ItemsSource = typeProduct; // заполнеие ComboBox для фильтрации
-            cmbFilter.DisplayMemberPath = "Name";
+            cmbFilter.DisplayMemberPath = "Title";
             cmbFilter.SelectedIndex = 0;
 
             Filter();

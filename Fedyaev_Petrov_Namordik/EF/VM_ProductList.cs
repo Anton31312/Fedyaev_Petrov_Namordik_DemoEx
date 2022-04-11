@@ -22,5 +22,9 @@ namespace Fedyaev_Petrov_Namordik.EF
         public Nullable<int> QtyLastSaleProduct { get; set; }
         public string Image { get; set; }
         public Nullable<int> NumberWorkshop { get; set; }
+        public int ProductTypeID { get; set; }
+        public string Description { get; set; }
+        public Nullable<int> ProductionPersonCount { get; set; }
+        public Nullable<int> ProductionWorkshopNumber { get; set; }
     }
 }

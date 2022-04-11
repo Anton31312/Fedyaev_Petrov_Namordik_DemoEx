@@ -7,8 +7,199 @@
         mc:Ignorable="d"
         Title="AddEditProductListWindow"
         Height="450"
-        Width="800">
+        Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         
+        <!--Верхняя строчка-->
+
+        <Border Background="#B0E5FD"
+                Grid.ColumnSpan="4"/>
+
+        <Image Source="/Source\Намордник.png"
+               HorizontalAlignment="Left"
+               Margin="15 0"
+               Height="50"/>
+
+        <TextBlock Text="Добавить продукт"
+                   HorizontalAlignment="Center"
+                   FontSize="40" 
+                   VerticalAlignment="Center"
+                   Foreground="#FFFFFF"
+                   Grid.ColumnSpan="4"
+                   x:Name="tbTitle"/>
+
+        
+        <!--Grid.Column = 0-->
+        <TextBlock Grid.Row="1"
+                   Text="Название товара"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 5 0"
+                   FontSize="15"/>
+
+        <TextBlock Grid.Row="2"
+                   Text="Тип продукта"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 5 0"
+                   FontSize="15"/>
+
+        <TextBlock Grid.Row="3"
+                   Text="Артикул"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 5 0"
+                   FontSize="15"/>
+
+        <TextBlock Grid.Row="4"
+                   Text="Описание"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 5 0"
+                   FontSize="15"/>
+
+        <TextBlock Grid.Row="5"
+                   Text="Количество человек для производства"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 5 0"
+                   TextAlignment="Right"
+                   TextWrapping="Wrap"
+                   FontSize="15"/>
+
+        <!--Grid.Column = 1-->
+        <TextBox x:Name="txtTitle"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Height="25"
+                 Width="150"
+                 HorizontalAlignment="Left"
+                 Margin="5 0 0 0"
+                 VerticalContentAlignment="Center"/>
+
+        <ComboBox x:Name="cmbTypeProduct"
+                  Grid.Row="2"
+                  Grid.Column="1"
+                  Height="25"
+                  Width="150"
+                  HorizontalAlignment="Left"
+                  Margin="5 0 0 0"
+                  VerticalContentAlignment="Center"/>
+
+        <TextBox x:Name="txtArticul"
+                 Grid.Row="3"
+                 Grid.Column="1"
+                 Height="25"
+                 Width="150"
+                 HorizontalAlignment="Left"
+                 Margin="5 0 0 0"
+                 VerticalContentAlignment="Center"/>
+
+        <TextBox x:Name="txtDescription"
+                 Grid.Row="4"
+                 Grid.Column="1"
+                 Height="25"
+                 Width="150"
+                 HorizontalAlignment="Left"
+                 Margin="5 0 0 0"
+                 VerticalContentAlignment="Center"/>
+
+        <TextBox x:Name="txtProductionPersonCount"
+                 Grid.Row="5"
+                 Grid.Column="1"
+                 Height="25"
+                 Width="150"
+                 HorizontalAlignment="Left"
+                 Margin="5 0 0 0"
+                 VerticalContentAlignment="Center"/>
+
+        <!--Grid.Column = 2-->
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Text="Номер цеха"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 5 0"
+                   FontSize="15"/>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2"
+                   Text="Минимальная стоимость для агента"
+                   VerticalAlignment="Center"
+                   TextAlignment="Right"
+                   TextWrapping="Wrap"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 5 0"
+                   FontSize="15"/>
+
+        <Border Grid.Column="2"
+                Grid.Row="3"
+                Grid.RowSpan="3"
+                BorderThickness="2"
+                BorderBrush="#FDBD40"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Height="150"
+                Width="150"
+                CornerRadius="10">
+            <Image x:Name="imgProduct"/>
+        </Border>
+
+        <!--Grid.Column = 3-->
+        <TextBox x:Name="txtNumberWorkshop"
+                 Grid.Row="1"
+                 Grid.Column="3"
+                 Height="25"
+                 Width="150"
+                 HorizontalAlignment="Left"
+                 Margin="5 0 0 0"
+                 VerticalContentAlignment="Center"/>
+
+        <TextBox x:Name="txtMinCostForAgent"
+                 Grid.Row="2"
+                 Grid.Column="3"
+                 Height="25"
+                 Width="150"
+                 HorizontalAlignment="Left"
+                 Margin="5 0 0 0"
+                 VerticalContentAlignment="Center"/>
+
+        <Button x:Name="btnAddPhoto"
+                Content="Добавить фото"
+                Grid.Row="5"
+                Grid.Column="3"
+                Height="25"
+                Width="150"
+                HorizontalAlignment="Left"
+                Margin="5 0 0 0"
+                Click="btnAddPhoto_Click"/>
+
+        <!--Button Add-->
+        <Button x:Name="btnAdd"
+                Content="Добавить"
+                Grid.Row="6"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Height="25"
+                Width="150"
+                HorizontalAlignment="Center"
+                Click="btnAdd_Click"/>
     </Grid>
 </Window>
